@@ -1,0 +1,39 @@
+{
+    "version": "0.14.0b4",
+    "description": "Open-source automated time tracker (Latest Release & Pre-release)",
+    "homepage": "https://activitywatch.net/",
+    "license": "MPL-2.0",
+    "notes": [
+        "Add to startup:",
+        "New-ItemProperty -Path HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run -Name ActivityWatch -PropertyType String -Value \"$dir\\aw-qt.exe\"",
+        "",
+        "Remove from startup:",
+        "Remove-ItemProperty -Path HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run -Name ActivityWatch"
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/ActivityWatch/activitywatch/releases/download/v0.14.0b4/activitywatch-v0.14.0b4-windows-x86_64.zip",
+            "hash": "c7acb66d5824aeeef17e0c941efd1f0dbaf216e112260972efa21cff40c25832"
+        }
+    },
+    "bin": "aw-qt.exe",
+    "shortcuts": [
+        [
+            "aw-qt.exe",
+            "ActivityWatch Beta"
+        ]
+    ],
+    "extract_dir": "activitywatch",
+    "checkver": {
+        "url": "https://api.github.com/repos/ActivityWatch/activitywatch/releases",
+        "jsonpath": "$[*].tag_name",
+        "regex": "v(?<version>\\d+\\.\\d+\\.\\d+(?:b\\d+)?)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/ActivityWatch/activitywatch/releases/download/v$version/activitywatch-v$version-windows-x86_64.zip"
+            }
+        }
+    }
+}

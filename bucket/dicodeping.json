@@ -1,0 +1,43 @@
+{
+    "version": "3.0.6",
+    "description": "DicodePing - Network ping tool and tunnel client",
+    "homepage": "https://github.com/mcodersir/dicodePing",
+    "license": "GPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/mcodersir/dicodePing/releases/download/v3.0.6/DicodePing-3.0.6-windows-x64-installer.exe",
+            "hash": "c31cb5c38800d25af3bf81c9dbfef37910e14479b89f23dd31734b8ead3e20d3"
+        }
+    },
+    "installer": {
+        "args": [
+            "/VERYSILENT",
+            "/SUPPRESSMSGBOXES",
+            "/NORESTART",
+            "/SP-",
+            "/DIR=$dir"
+        ]
+    },
+    "uninstaller": {
+        "file": "unins000.exe",
+        "args": [
+            "/VERYSILENT",
+            "/SUPPRESSMSGBOXES",
+            "/NORESTART"
+        ]
+    },
+    "shortcuts": [
+        [
+            "DicodePing.exe",
+            "DicodePing"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/mcodersir/dicodePing/releases/download/v$version/DicodePing-$version-windows-x64-installer.exe"
+            }
+        }
+    }
+}
