@@ -25,6 +25,14 @@
             "PattN"
         ]
     ],
+    "post_install": [
+        "Copy-Item \"$dir\\bin\\*.dat\" \"$dir\\bin\\xray\\\" -ErrorAction SilentlyContinue",
+        "Copy-Item \"$dir\\bin\\*.dat\" \"$dir\\bin\\sing_box\\\" -ErrorAction SilentlyContinue",
+        "Copy-Item \"$dir\\bin\\*.mmdb\" \"$dir\\bin\\xray\\\" -ErrorAction SilentlyContinue",
+        "Copy-Item \"$dir\\bin\\*.mmdb\" \"$dir\\bin\\sing_box\\\" -ErrorAction SilentlyContinue",
+        "Copy-Item \"$dir\\bin\\*.dat\" \"$dir\\bin\\mihomo\\\" -ErrorAction SilentlyContinue",
+        "Copy-Item \"$dir\\bin\\*.mmdb\" \"$dir\\bin\\mihomo\\\" -ErrorAction SilentlyContinue"
+    ],
     "persist": "guiConfigs",
     "checkver": "github",
     "autoupdate": {
