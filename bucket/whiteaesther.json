@@ -1,0 +1,30 @@
+{
+    "version": "1.6.0",
+    "description": "WhiteAesther — Cross-platform desktop client for the Aether connection core",
+    "homepage": "https://github.com/WhiteDNS/WhiteAesther",
+    "license": "AGPL-3.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/WhiteDNS/WhiteAesther/releases/download/v1.6.0/WhiteAesther_1.6.0_windows_x86_64.exe",
+            "hash": "4d97c181747623270e3d1dd109a108a6180b943c64e576d23a887a6d079975b9"
+        }
+    },
+    "pre_install": [
+        "Expand-7zipArchive \"$dir\\WhiteAesther_*_windows_x86_64.exe\" \"$dir\" -Removal",
+        "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\uninstall.exe\" -Force -Recurse -ErrorAction SilentlyContinue"
+    ],
+    "shortcuts": [
+        [
+            "whiteaesther.exe",
+            "WhiteAesther"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/WhiteDNS/WhiteAesther/releases/download/v$version/WhiteAesther_$version_windows_x86_64.exe"
+            }
+        }
+    }
+}
