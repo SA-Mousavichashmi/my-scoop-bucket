@@ -1,0 +1,29 @@
+{
+    "version": "0.8.1",
+    "description": "Coding agent CLI with a persistent Python REPL kernel and session management.",
+    "homepage": "https://github.com/PrimeIntellect-ai/prime-agent",
+    "license": "MIT",
+    "suggest": {
+        "Node.js": "nodejs-lts",
+        "uv": "uv"
+    },
+    "url": "https://github.com/PrimeIntellect-ai/prime-agent/releases/download/v0.8.1/prime-agent-0.8.1.tgz",
+    "hash": "46c24db1782dd31adc35d5c6cbcc75564faba6ced3bf2ccf03d836ee77134475",
+    "extract_dir": "package",
+    "pre_install": [
+        "Set-Content \"$dir\\prime-agent.cmd\" '@node \"%~dp0dist\\bundle\\cli.js\" %*' -Encoding ASCII",
+        "Set-Content \"$dir\\prime-agent.ps1\" '& node \"$PSScriptRoot\\dist\\bundle\\cli.js\" @args' -Encoding UTF8"
+    ],
+    "post_install": [
+        "Push-Location \"$dir\"",
+        "npm install --omit=dev --no-audit --no-fund --allow-remote=all",
+        "Pop-Location"
+    ],
+    "bin": [
+        "prime-agent.cmd"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/PrimeIntellect-ai/prime-agent/releases/download/v$version/prime-agent-$version.tgz"
+    }
+}
