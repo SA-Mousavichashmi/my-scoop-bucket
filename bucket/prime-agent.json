@@ -17,6 +17,7 @@
     "post_install": [
         "Push-Location \"$dir\"",
         "npm install --omit=dev --no-audit --no-fund --allow-remote=all",
+        "Get-ChildItem \"$dir\\dist\\bundle\\*.js\" | ForEach-Object { (Get-Content $_.FullName -Raw) -replace '(\\bstdio:\\s*(\"ignore\"|\\[\"ignore\",\\s*\"ignore\",\\s*\"pipe\",\\s*\"pipe\"\\]))', '$1, windowsHide: true' | Set-Content $_.FullName }",
         "Pop-Location"
     ],
     "bin": [
