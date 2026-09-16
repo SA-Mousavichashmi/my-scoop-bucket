@@ -1,0 +1,34 @@
+{
+    "version": "0.9.5",
+    "description": "Autonomous AI coding agent with bash execution harness and TUI interface by Prime Intellect",
+    "homepage": "https://github.com/PrimeIntellect-ai/prime-agent",
+    "license": "Apache-2.0",
+    "suggest": {
+        "Node.js": "nodejs-lts",
+        "Git (for Git Bash)": "git",
+        "uv": "uv"
+    },
+    "url": "https://github.com/PrimeIntellect-ai/prime-agent/releases/download/v0.9.5/prime-agent-0.9.5.tgz",
+    "hash": "349f1682c7909550842f1b04a71ba95814341b136474ade736df93f8ec006876",
+    "extract_dir": "package",
+    "pre_install": [
+        "Set-Content \"$dir\\prime-agent.cmd\" '@node \"%~dp0dist\\bundle\\cli.js\" %*' -Encoding ASCII",
+        "Set-Content \"$dir\\prime-agent.ps1\" '& node \"$PSScriptRoot\\dist\\bundle\\cli.js\" @args' -Encoding UTF8"
+    ],
+    "post_install": [
+        "Push-Location \"$dir\"",
+        "npm install --omit=dev --no-audit --no-fund --allow-remote=all",
+        "Pop-Location"
+    ],
+    "bin": [
+        "prime-agent.cmd",
+        [
+            "prime-agent.cmd",
+            "prime"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/PrimeIntellect-ai/prime-agent/releases/download/v$version/prime-agent-$version.tgz"
+    }
+}
