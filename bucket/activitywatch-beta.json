@@ -1,5 +1,5 @@
 {
-    "version": "0.14.0b5",
+    "version": "0.14.0b6",
     "description": "Open-source automated time tracker (Latest Release & Pre-release)",
     "homepage": "https://activitywatch.net/",
     "license": "MPL-2.0",
@@ -12,8 +12,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/ActivityWatch/activitywatch/releases/download/v0.14.0b5/activitywatch-v0.14.0b5-windows-x86_64.zip",
-            "hash": "ac16e1ae6e61808f9b14599a84f68c6aedb9d55acbeb78e625cdebb3308a259d"
+            "url": "https://github.com/ActivityWatch/activitywatch/releases/download/v0.14.0b6/activitywatch-v0.14.0b6-windows-x86_64.zip",
+            "hash": "2245c719859a8f07e285f8adf47e577dcfdea7a860e59555b5cc50ebccd35522"
         }
     },
     "bin": "aw-qt.exe",
