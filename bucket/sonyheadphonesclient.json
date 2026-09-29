@@ -1,0 +1,25 @@
+{
+    "description":  "Alternative client for Sony headphones/earbuds on Windows with ANC, EQ, and battery monitoring",
+    "architecture":  {
+                         "64bit":  {
+                                       "hash":  "a803d6f9e0fed5ffb307ac870a5fb938736e62a2fb1ccc14a6ed48c14aef2f97",
+                                       "url":  "https://github.com/mos9527/SonyHeadphonesClient/releases/download/1.4.4/SonyHeadphonesClient-win-x64.exe#/SonyHeadphonesClient.exe"
+                                   }
+                     },
+    "shortcuts":  [
+                      "SonyHeadphonesClient.exe",
+                      "Sony Headphones Client"
+                  ],
+    "version":  "1.4.4",
+    "autoupdate":  {
+                       "architecture":  {
+                                            "64bit":  {
+                                                          "url":  "https://github.com/mos9527/SonyHeadphonesClient/releases/download/$version/SonyHeadphonesClient-win-x64.exe#/SonyHeadphonesClient.exe"
+                                                      }
+                                        }
+                   },
+    "license":  "MIT",
+    "homepage":  "https://github.com/mos9527/SonyHeadphonesClient",
+    "checkver":  "github",
+    "bin":  "SonyHeadphonesClient.exe"
+}
