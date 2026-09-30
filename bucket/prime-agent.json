@@ -1,5 +1,5 @@
 {
-    "version": "0.9.7",
+    "version": "0.9.8",
     "description": "Autonomous AI coding agent with bash execution harness and TUI interface by Prime Intellect",
     "homepage": "https://github.com/PrimeIntellect-ai/prime-agent",
     "license": "Apache-2.0",
@@ -8,8 +8,8 @@
         "Git (for Git Bash)": "git",
         "uv": "uv"
     },
-    "url": "https://github.com/PrimeIntellect-ai/prime-agent/releases/download/v0.9.7/prime-agent-0.9.7.tgz",
-    "hash": "d696f2636cd7780d2d67296142bc1d13d72960c8be4e5cfae0bbba82f9d8707d",
+    "url": "https://github.com/PrimeIntellect-ai/prime-agent/releases/download/v0.9.8/prime-agent-0.9.8.tgz",
+    "hash": "d7b72785119efc28bfbca8ec4a7f47a1fcdcf47fcd8cebdb60bffaa79e3e1274",
     "extract_dir": "package",
     "pre_install": [
         "Set-Content \"$dir\\prime-agent.cmd\" '@node \"%~dp0dist\\bundle\\cli.js\" %*' -Encoding ASCII",
