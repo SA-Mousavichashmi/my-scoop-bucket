@@ -1,25 +1,25 @@
 {
     "version": "0.14.0b8",
-    "description": "Open-source automated time tracker (Latest Release & Pre-release)",
+    "description": "Open-source automated time tracker (Tauri distribution, Latest Release & Pre-release)",
     "homepage": "https://activitywatch.net/",
     "license": "MPL-2.0",
     "notes": [
         "Add to startup:",
-        "New-ItemProperty -Path HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run -Name ActivityWatch -PropertyType String -Value \"$dir\\aw-qt.exe\"",
+        "New-ItemProperty -Path HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run -Name ActivityWatch -PropertyType String -Value \"$dir\\aw-tauri.exe\"",
         "",
         "Remove from startup:",
         "Remove-ItemProperty -Path HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run -Name ActivityWatch"
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/ActivityWatch/activitywatch/releases/download/v0.14.0b8/activitywatch-v0.14.0b8-windows-x86_64.zip",
-            "hash": "eefcb1e116b08761529cb0db25bc8e42dc1341cf24ed3accc19d9c5bf76a52a6"
+            "url": "https://github.com/ActivityWatch/activitywatch/releases/download/v0.14.0b8/activitywatch-tauri-v0.14.0b8-windows-x86_64.zip",
+            "hash": "7c8f5e0c049782b76bd8fc21372bcea3becb6650b14791cc5d609ddb9ca1e5ab"
         }
     },
-    "bin": "aw-qt.exe",
+    "bin": "aw-tauri.exe",
     "shortcuts": [
         [
-            "aw-qt.exe",
+            "aw-tauri.exe",
             "ActivityWatch Beta"
         ]
     ],
@@ -32,7 +32,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/ActivityWatch/activitywatch/releases/download/v$version/activitywatch-v$version-windows-x86_64.zip"
+                "url": "https://github.com/ActivityWatch/activitywatch/releases/download/v$version/activitywatch-tauri-v$version-windows-x86_64.zip"
             }
         }
     }
