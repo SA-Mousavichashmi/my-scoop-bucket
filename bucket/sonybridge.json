@@ -1,0 +1,40 @@
+{
+    "version": "0.4.0-beta2",
+    "description": "Cross-platform desktop app for Sony headphones and earbuds (ANC, Ambient Sound, EQ, DSEE, battery)",
+    "homepage": "https://github.com/AmitRajput-Dev/SonyBridge",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/AmitRajput-Dev/SonyBridge/releases/download/v0.4.0-beta2/SonyBridge-Windows-x64-beta2.zip",
+            "hash": "7b27d70db2918c37512f9f557a0bc8d9c6c5d49c6a3d1216ca286b20cd01c556"
+        }
+    },
+    "pre_install": [
+        "Get-ChildItem \"$dir\" -Directory | Where-Object { $_.Name -like 'SonyBridge-Windows*' } | ForEach-Object { Move-Item \"$($_.FullName)/*\" \"$dir\" -Force; Remove-Item $_.FullName -Recurse -Force }",
+        "Remove-Item \"$dir/__MACOSX\" -Recurse -Force -ErrorAction SilentlyContinue"
+    ],
+    "bin": [
+        [
+            "SonyBridge.exe",
+            "sonybridge"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "SonyBridge.exe",
+            "SonyBridge"
+        ]
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/AmitRajput-Dev/SonyBridge/releases",
+        "jsonpath": "$[*].assets[*].browser_download_url",
+        "regex": "download/v(?<version>[\\d.]+(?:-[\\w.]+)?)/SonyBridge-Windows-x64-(?<suffix>[\\w.]+)\\.zip"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/AmitRajput-Dev/SonyBridge/releases/download/v$version/SonyBridge-Windows-x64-$matchSuffix.zip"
+            }
+        }
+    }
+}
