@@ -1,12 +1,12 @@
 {
-    "version": "3.1.4",
+    "version": "3.1.5",
     "description": "Multi-core VPN client for desktop: Xray, sing-box, Psiphon, Tor, DNS tunnels, WireGuard/AmneziaWG, OpenConnect, IKEv2",
     "homepage": "https://github.com/CluvexStudio/ZedSecure",
     "license": "AGPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/CluvexStudio/ZedSecure/releases/download/v3.1.4/ZedSecure-3.1.4-windows-x86_64.zip",
-            "hash": "8445cd18de0284367d784cab72a446c1b53e9a692ce659f4a1bb8203f8d4377a"
+            "url": "https://github.com/CluvexStudio/ZedSecure/releases/download/v3.1.5/ZedSecure-3.1.5-windows-x86_64.zip",
+            "hash": "bf1c126d88b88bf0eabb0a601ccbdfc15830e981df47425df7ad2756a1ff21f7"
         }
     },
     "extract_dir": "ZedSecure",
