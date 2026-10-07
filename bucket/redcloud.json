@@ -1,0 +1,40 @@
+{
+    "version": "4.5",
+    "description": "Next-generation multi-core anti-censorship VPN client for Windows (sing-box, Xray, Hysteria 2, VLESS Reality, GoodbyeDPI)",
+    "homepage": "https://github.com/Devtahas/RedCloud-windows",
+    "license": "Apache-2.0",
+    "suggest": {
+        "Inno Setup Unpacker": "innounp"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Devtahas/RedCloud-windows/releases/download/v4.5/RedCloud_VPN_Setup_v4.5.exe",
+            "hash": "f8d8f3483056c8854e0bdfd7125a65e9e7d6130c4fd8dce7983179cb8515830d"
+        }
+    },
+    "innosetup": true,
+    "pre_install": [
+        "Get-ChildItem -Path \"$dir\" -Recurse -File | Where-Object { $_.Name -match ',2(\\z|\\.)' } | Remove-Item -Force",
+        "Get-ChildItem -Path \"$dir\" -Recurse -File | Where-Object { $_.Name -match ',1(\\z|\\.)' } | ForEach-Object { $newName = $_.Name -replace ',1\\.', '.' -replace ',1\\z', ''; Move-Item -LiteralPath $_.FullName -Destination (Join-Path $_.DirectoryName $newName) -Force }"
+    ],
+    "bin": [
+        [
+            "client.exe",
+            "redcloud"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "client.exe",
+            "RedCloud VPN"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/Devtahas/RedCloud-windows/releases/download/v$version/RedCloud_VPN_Setup_v$version.exe"
+            }
+        }
+    }
+}
