@@ -1,17 +1,15 @@
 {
-    "version": "0.6.9",
+    "version": "1.0.15",
     "description": "OfficeDex is the AI-Native VibeOfficing platform for documents, slides, and spreadsheets.",
     "homepage": "https://github.com/officecli/officedex",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/officecli/officedex/releases/download/v0.6.9/OfficeDex-v0.6.9-windows-amd64.zip",
-            "hash": "883b7653dab1c80b4396602b731c8ce88ac4e89867d515bff5e95342b557fbc5"
+            "url": "https://github.com/officecli/officedex/releases/download/v1.0.15/OfficeDex-v1.0.15-windows-amd64.zip",
+            "hash": "04bbafe1dc95356f435805d1dc65ef3bd32d0438727ae93d86f71ca1d2a225e5"
         }
     },
-    "bin": [
-        "officedex.exe"
-    ],
+    "bin": "officedex.exe",
     "shortcuts": [
         [
             "officedex.exe",
