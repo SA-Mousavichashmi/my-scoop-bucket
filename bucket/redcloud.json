@@ -1,5 +1,5 @@
 {
-    "version": "4.5",
+    "version": "4.6",
     "description": "Next-generation multi-core anti-censorship VPN client for Windows (sing-box, Xray, Hysteria 2, VLESS Reality, GoodbyeDPI)",
     "homepage": "https://github.com/Devtahas/RedCloud-windows",
     "license": "Apache-2.0",
@@ -8,8 +8,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Devtahas/RedCloud-windows/releases/download/v4.5/RedCloud_VPN_Setup_v4.5.exe",
-            "hash": "f8d8f3483056c8854e0bdfd7125a65e9e7d6130c4fd8dce7983179cb8515830d"
+            "url": "https://github.com/Devtahas/RedCloud-windows/releases/download/v4.6/RedCloud_VPN_Setup_v4.6.exe",
+            "hash": "fa4697435b36fd7e1d1012bbc705cb7903683b899460c03c9f1b7c6cf2f14543"
         }
     },
     "innosetup": true,
