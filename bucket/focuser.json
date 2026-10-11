@@ -18,7 +18,8 @@
             "focuser-cli.exe",
             "focuser"
         ],
-        "focuser-cli.exe"
+        "focuser-cli.exe",
+        "focuser-native.exe"
     ],
     "shortcuts": [
         [
