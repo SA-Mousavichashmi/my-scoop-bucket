@@ -1,12 +1,12 @@
 {
-    "version": "0.3.1",
+    "version": "0.3.2",
     "description": "Local-first indexing and search assistant for your documents and AI apps",
     "homepage": "https://www.miyo.chat",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Brevilabs/miyo-releases/releases/download/v0.3.1/Miyo-Setup-0.3.1-x64.exe#/dl.7z",
-            "hash": "sha512:0ba44bbe453b0a7443f28c995099e2d8393998459747fd9736bea9c3495fa03197cff9ddc4766ce1712f3d03af4ac9371f34fbf17be94b268e7d1b7537ff0582",
+            "url": "https://github.com/Brevilabs/miyo-releases/releases/download/v0.3.2/Miyo-Setup-0.3.2-x64.exe#/dl.7z",
+            "hash": "sha512:5b8bc21292e84918cc8398940e005e91fcae4bd3da1527f7250058d1d296f79ee9c50f2b3a0f5af9db4a75bb394ca268fd3a949dff58a14eb7ac3401b7077c27",
             "pre_install": [
                 "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\" -Removal",
                 "Remove-Item \"$dir\\`$*\" -Recurse"
