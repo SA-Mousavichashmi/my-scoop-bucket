@@ -1,0 +1,39 @@
+{
+    "version": "10.0.3-beta-5",
+    "description": "Open-source censorship circumvention tool (Unified Latest / Beta)",
+    "homepage": "https://github.com/getlantern/lantern",
+    "license": "GPL-3.0-only",
+    "notes": "Lantern uses a background service (LanternSvc) for system-wide VPN routing. If prompted, run 'lanternd install' from an elevated terminal.",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/getlantern/lantern/releases/download/v10.0.3-beta-5/lantern-installer-beta.exe",
+            "hash": "b79650a5fa8157cf1170e6d9bd9fe72a0c623b6303aa466e39bbe63b1c6ea25a"
+        }
+    },
+    "innosetup": true,
+    "bin": [
+        "lanternd.exe"
+    ],
+    "shortcuts": [
+        [
+            "lantern.exe",
+            "Lantern"
+        ]
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/getlantern/lantern/releases",
+        "jsonpath": "$[*].assets[*].browser_download_url",
+        "regex": "download/v(?<version>[\\d.]+(?:-[\\w.-]+)?)/lantern-installer(?<suffix>-beta)?\\.exe"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/getlantern/lantern/releases/download/v$version/lantern-installer$matchSuffix.exe",
+                "hash": {
+                    "url": "$baseurl/lantern-installer$matchSuffix.exe.update.json",
+                    "jsonpath": "$.sha256"
+                }
+            }
+        }
+    }
+}
