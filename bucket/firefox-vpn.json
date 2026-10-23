@@ -1,12 +1,12 @@
 {
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Cross-platform desktop VPN and proxy client for Firefox Accounts powered by Mozilla and Fastly",
     "homepage": "https://github.com/armanlife/firefox-vpn-client",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/armanlife/firefox-vpn-client/releases/download/v1.0.1/Firefox-VPN-1.0.1-Windows-x64.zip",
-            "hash": "c62f443425c7eead0a23832482b3c090a30201232d2bfff2711198c7707548c4"
+            "url": "https://github.com/armanlife/firefox-vpn-client/releases/download/v1.0.2/Firefox-VPN-1.0.2-Windows-x64.zip",
+            "hash": "393ba331c50b85c0bea6ac40942bb7996fb78bd9b872d14605228d07684fb294"
         }
     },
     "extract_dir": "Firefox VPN",
