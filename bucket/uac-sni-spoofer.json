@@ -1,12 +1,12 @@
 {
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "Windows desktop app for SNI spoofing, smart routing, Xray integration, and PoW (Psiphon + aether)",
     "homepage": "https://github.com/Floxu1/UAC-SNI-Spoofer-Windows",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Floxu1/UAC-SNI-Spoofer-Windows/releases/download/1.1.1/UAC-Spoofer-Desktop-v1.1.1-Windows-x64-portable.zip",
-            "hash": "1c9c50b9a90989f7b4fac7e2a996b9a5f717f71dda984d6abdf7b78bbac42644"
+            "url": "https://github.com/Floxu1/UAC-SNI-Spoofer-Windows/releases/download/1.1.2/UAC-Spoofer-Desktop-v1.1.2-Windows-x64-portable.zip",
+            "hash": "d8dfdd942e053c025be625adbbe69fcd5ad388295cc0eca70636e279456b9294"
         }
     },
     "shortcuts": [
