@@ -1,12 +1,12 @@
 {
-    "version": "5.12.5",
+    "version": "5.12.7",
     "description": "Modern, secure Flutter VPN client for internet freedom and censorship circumvention",
     "homepage": "https://github.com/UnboundTechCo/defyxVPN",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/UnboundTechCo/defyxVPN/releases/download/v5.12.5/DefyxVPN-Windows-Portable-x64.zip",
-            "hash": "876d12d1eedbba72f3e01af5ffb6740e5c86a2c64a8b8f151c453f1d5f6bfcca"
+            "url": "https://github.com/UnboundTechCo/defyxVPN/releases/download/v5.12.7/DefyxVPN-Windows-Portable-x64.zip",
+            "hash": "c017bedc3f389bc4829ab8e22ad726a2e60081c2f1ea354c0615d49a76046fda"
         }
     },
     "bin": [
