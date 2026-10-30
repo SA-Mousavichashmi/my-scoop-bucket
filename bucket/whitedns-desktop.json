@@ -1,16 +1,16 @@
 {
-    "version": "1.4.8",
+    "version": "1.4.9",
     "description": "WhiteDNS Desktop — DNS tunneling client with MasterDNS, CottenDNS, StormDNS, and Soar",
     "homepage": "https://github.com/WhiteDNS/WhiteDNS-Desktop",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/WhiteDNS/WhiteDNS-Desktop/releases/download/desktop-v1.4.8/WhiteDNS-Desktop-1.4.8-windows-x64.zip",
-            "hash": "dd999a45ef4164fc96d5a8a911caf6f1a507a7671f37c13dd41fde8c5b3b7bfe"
+            "url": "https://github.com/WhiteDNS/WhiteDNS-Desktop/releases/download/desktop-v1.4.9/WhiteDNS-Desktop-1.4.9-windows-x64.zip",
+            "hash": "5138903d087e5bf49f32130da1ac88a6c1819354fa7bf5c5486cadfb4535fb7f"
         },
         "arm64": {
-            "url": "https://github.com/WhiteDNS/WhiteDNS-Desktop/releases/download/desktop-v1.4.8/WhiteDNS-Desktop-1.4.8-windows-arm64-windows-on-arm.zip",
-            "hash": "f82a903cc36bf9ccaf9d43baede6e2f40cbc4966e8b4fc146a89d1e1bd97bfd9"
+            "url": "https://github.com/WhiteDNS/WhiteDNS-Desktop/releases/download/desktop-v1.4.9/WhiteDNS-Desktop-1.4.9-windows-arm64-windows-on-arm.zip",
+            "hash": "b8d20f11b3c40a5da20d137757ca0e941faf0269ae2c375bb4f81c502cd51f7b"
         }
     },
     "shortcuts": [
