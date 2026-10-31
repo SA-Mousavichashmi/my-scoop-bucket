@@ -1,12 +1,12 @@
 {
-    "version": "4.9.91",
+    "version": "4.9.92",
     "description": "Cross-platform multi-core proxy and ping-testing desktop client (Avalonia UI) bundled with Xray, sing-box, and mihomo",
     "homepage": "https://github.com/mcodersir/dicodePing",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/mcodersir/dicodePing/releases/download/v4.9.91/DicodePing-4.9.91-windows-x64-portable.zip",
-            "hash": "70ce52ee6cd15ab9c57be4bc33356e0d0df7d4ecacc4487f517faf3e4156b95c"
+            "url": "https://github.com/mcodersir/dicodePing/releases/download/v4.9.92/DicodePing-4.9.92-windows-x64-portable.zip",
+            "hash": "1c929069a1bf013e03ee8df836c8c3cb5c92629d0280aee312640d7d900549ab"
         }
     },
     "shortcuts": [
