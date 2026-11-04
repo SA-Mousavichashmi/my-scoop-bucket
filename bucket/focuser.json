@@ -1,12 +1,12 @@
 {
-    "version": "0.11.4",
+    "version": "0.11.5",
     "description": "Free and open-source website and application blocker built in Rust with Pomodoro focus sessions and daily allowances",
     "homepage": "https://github.com/aadeshrao123/Focuser",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/aadeshrao123/Focuser/releases/download/v0.11.4/Focuser_0.11.4_x64-setup.exe",
-            "hash": "8ff89594da3c734b2013371e8120da2df3a0b34c896a1801b3dde4d98d4766cc"
+            "url": "https://github.com/aadeshrao123/Focuser/releases/download/v0.11.5/Focuser_0.11.5_x64-setup.exe",
+            "hash": "53d96374d94ac172f5a9f4507bc55c87febdbb424e5d06eb4717866ef7c054b8"
         }
     },
     "pre_install": [
