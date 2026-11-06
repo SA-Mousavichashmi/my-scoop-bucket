@@ -16,16 +16,8 @@
             "arman-vpn"
         ],
         [
-            "arman-vpn.exe",
-            "firefox-vpn"
-        ],
-        [
             "core/arman-vpn-core.exe",
             "arman-vpn-core"
-        ],
-        [
-            "core/arman-vpn-core.exe",
-            "firefox-vpn-core"
         ]
     ],
     "shortcuts": [
