@@ -1,5 +1,5 @@
 {
-    "version": "0.5.0",
+    "version": "0.5.2",
     "description": "Fast, resumable download manager with browser integration, video/torrent support, and an MCP server",
     "homepage": "https://misterdownloadmanager.com",
     "license": "GPL-3.0-only",
@@ -17,9 +17,9 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/anefzaoui/misterdownloadmanager/releases/download/v0.5.0/MisterDownloadManager-0.5.0-x64.zip",
-            "hash": "ec055ca2aca7bd0a40ad4d5562d8d259e1c01ef9b4e3124ce21f1f4fba8c0b2f",
-            "extract_dir": "MisterDownloadManager-0.5.0-x64"
+            "url": "https://github.com/anefzaoui/misterdownloadmanager/releases/download/v0.5.2/MisterDownloadManager-0.5.2-x64.zip",
+            "hash": "703c1676c90e34869dfd8e7fb675e06c9093bb5e23db92232a6a7534a50b9f63",
+            "extract_dir": "MisterDownloadManager-0.5.2-x64"
         }
     },
     "bin": [
@@ -40,9 +40,7 @@
             "Mister Download Manager"
         ]
     ],
-    "post_install": [
-        "& \"$dir\\misterdownloadmanager-nmhost.exe\" --register"
-    ],
+    "post_install": "& \"$dir\\misterdownloadmanager-nmhost.exe\" --register",
     "pre_uninstall": [
         "if (Test-Path \"$dir\\misterdownloadmanager-nmhost.exe\") {",
         "    & \"$dir\\misterdownloadmanager-nmhost.exe\" --unregister",
