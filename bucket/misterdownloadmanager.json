@@ -1,0 +1,65 @@
+{
+    "version": "0.5.0",
+    "description": "Fast, resumable download manager with browser integration, video/torrent support, and an MCP server",
+    "homepage": "https://misterdownloadmanager.com",
+    "license": "GPL-3.0-only",
+    "suggest": {
+        "FFmpeg": "ffmpeg",
+        "yt-dlp": "yt-dlp",
+        "gallery-dl": "gallery-dl"
+    },
+    "notes": [
+        "Install the browser extension to catch downloads automatically:",
+        "  Chrome / Edge / Brave: https://chromewebstore.google.com/detail/mister-download-manager/ejoleppdfgjdndddcjoehopknmlglojp",
+        "  Firefox: https://addons.mozilla.org/firefox/addon/mister-download-manager/",
+        "",
+        "Native messaging host has been automatically registered for your browsers."
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/anefzaoui/misterdownloadmanager/releases/download/v0.5.0/MisterDownloadManager-0.5.0-x64.zip",
+            "hash": "ec055ca2aca7bd0a40ad4d5562d8d259e1c01ef9b4e3124ce21f1f4fba8c0b2f",
+            "extract_dir": "MisterDownloadManager-0.5.0-x64"
+        }
+    },
+    "bin": [
+        [
+            "misterdownloadmanager-cli.exe",
+            "mdm"
+        ],
+        "misterdownloadmanager-cli.exe",
+        "misterdownloadmanager-mcp.exe",
+        [
+            "misterdownloadmanager.exe",
+            "misterdownloadmanager"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "misterdownloadmanager.exe",
+            "Mister Download Manager"
+        ]
+    ],
+    "post_install": [
+        "& \"$dir\\misterdownloadmanager-nmhost.exe\" --register"
+    ],
+    "pre_uninstall": [
+        "if (Test-Path \"$dir\\misterdownloadmanager-nmhost.exe\") {",
+        "    & \"$dir\\misterdownloadmanager-nmhost.exe\" --unregister",
+        "}"
+    ],
+    "checkver": {
+        "github": "https://github.com/anefzaoui/misterdownloadmanager"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/anefzaoui/misterdownloadmanager/releases/download/v$version/MisterDownloadManager-$version-x64.zip",
+                "extract_dir": "MisterDownloadManager-$version-x64"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/SHA256SUMS.txt"
+        }
+    }
+}
