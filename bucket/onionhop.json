@@ -1,12 +1,12 @@
 {
-    "version": "3.10.1",
+    "version": "3.11",
     "description": "Privacy-first desktop app that routes traffic through Tor (TUN/VPN and Proxy modes)",
     "homepage": "https://github.com/center2055/OnionHop",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/center2055/OnionHop/releases/download/v3.10.1/OnionHopV3-Portable-3.10.1-win-x64.zip",
-            "hash": "0c3a083ee37be0b4031cfdb7be927815cfb54ef5061e92b88a06709dffc05088"
+            "url": "https://github.com/center2055/OnionHop/releases/download/v3.11/OnionHopV3-Portable-3.11-win-x64.zip",
+            "hash": "b20c34386acd653860a4a5039d1cea22e9512ea32dda2f811d60df1ab6eb7804"
         }
     },
     "bin": [
