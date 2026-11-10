@@ -1,0 +1,44 @@
+{
+    "version": "0.11.1.2636",
+    "description": "MPC Video Renderer is an open-source DirectShow video renderer based on Direct3D 11 and libplacebo.",
+    "homepage": "https://github.com/Aleksoid1978/VideoRenderer",
+    "license": "GPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Aleksoid1978/VideoRenderer/releases/download/0.11.1/MpcVideoRenderer-0.11.1.2636.zip",
+            "hash": "c7cb676590c6c6d923f48c68f8bca1171fbb579e89a8ebd7afc7aeba13cf4601"
+        }
+    },
+    "post_install": [
+        "$isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)",
+        "if ($isAdmin) {",
+        "    Start-Process -FilePath \"regsvr32.exe\" -ArgumentList \"/s `\"$dir\\MpcVideoRenderer64.ax`\"\" -Wait -NoNewWindow",
+        "} else {",
+        "    $c = 'using System; using System.Runtime.InteropServices; using Microsoft.Win32; public class MpcReg { [DllImport(\"advapi32.dll\")] public static extern int RegOverridePredefKey(IntPtr h, IntPtr n); [DllImport(\"kernel32.dll\", CharSet=CharSet.Unicode)] public static extern IntPtr LoadLibrary(string p); [DllImport(\"kernel32.dll\")] public static extern IntPtr GetProcAddress(IntPtr m, string n); [DllImport(\"kernel32.dll\")] public static extern bool FreeLibrary(IntPtr m); public delegate int F(); public static int Reg(string p, bool u) { RegistryKey k = Registry.CurrentUser.CreateSubKey(@\"Software\\Classes\"); IntPtr h = k.Handle.DangerousGetHandle(); RegOverridePredefKey(new IntPtr(unchecked((int)0x80000000)), h); RegOverridePredefKey(new IntPtr(unchecked((int)0x80000002)), h); IntPtr m = LoadLibrary(p); if (m == IntPtr.Zero) return -1; IntPtr f = GetProcAddress(m, u ? \"DllUnregisterServer\" : \"DllRegisterServer\"); int r = -2; if (f != IntPtr.Zero) { F d = (F)Marshal.GetDelegateForFunctionPointer(f, typeof(F)); r = d(); } FreeLibrary(m); RegOverridePredefKey(new IntPtr(unchecked((int)0x80000000)), IntPtr.Zero); RegOverridePredefKey(new IntPtr(unchecked((int)0x80000002)), IntPtr.Zero); k.Close(); return r; } }';",
+        "    if (-not ([System.Management.Automation.PSTypeName]'MpcReg').Type) { Add-Type -TypeDefinition $c }",
+        "    [MpcReg]::Reg(\"$dir\\MpcVideoRenderer64.ax\", $false) | Out-Null",
+        "}"
+    ],
+    "pre_uninstall": [
+        "$isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)",
+        "if ($isAdmin) {",
+        "    Start-Process -FilePath \"regsvr32.exe\" -ArgumentList \"/u /s `\"$dir\\MpcVideoRenderer64.ax`\"\" -Wait -NoNewWindow",
+        "} else {",
+        "    $c = 'using System; using System.Runtime.InteropServices; using Microsoft.Win32; public class MpcReg { [DllImport(\"advapi32.dll\")] public static extern int RegOverridePredefKey(IntPtr h, IntPtr n); [DllImport(\"kernel32.dll\", CharSet=CharSet.Unicode)] public static extern IntPtr LoadLibrary(string p); [DllImport(\"kernel32.dll\")] public static extern IntPtr GetProcAddress(IntPtr m, string n); [DllImport(\"kernel32.dll\")] public static extern bool FreeLibrary(IntPtr m); public delegate int F(); public static int Reg(string p, bool u) { RegistryKey k = Registry.CurrentUser.CreateSubKey(@\"Software\\Classes\"); IntPtr h = k.Handle.DangerousGetHandle(); RegOverridePredefKey(new IntPtr(unchecked((int)0x80000000)), h); RegOverridePredefKey(new IntPtr(unchecked((int)0x80000002)), h); IntPtr m = LoadLibrary(p); if (m == IntPtr.Zero) return -1; IntPtr f = GetProcAddress(m, u ? \"DllUnregisterServer\" : \"DllRegisterServer\"); int r = -2; if (f != IntPtr.Zero) { F d = (F)Marshal.GetDelegateForFunctionPointer(f, typeof(F)); r = d(); } FreeLibrary(m); RegOverridePredefKey(new IntPtr(unchecked((int)0x80000000)), IntPtr.Zero); RegOverridePredefKey(new IntPtr(unchecked((int)0x80000002)), IntPtr.Zero); k.Close(); return r; } }';",
+        "    if (-not ([System.Management.Automation.PSTypeName]'MpcReg').Type) { Add-Type -TypeDefinition $c }",
+        "    [MpcReg]::Reg(\"$dir\\MpcVideoRenderer64.ax\", $true) | Out-Null",
+        "}"
+    ],
+    "checkver": {
+        "github": "https://api.github.com/repos/Aleksoid1978/VideoRenderer/releases/latest",
+        "jsonpath": "$.assets[?(@.name =~ /^MpcVideoRenderer-[\\d.]+\\.zip$/)].browser_download_url",
+        "regex": "download/(?<tag>[\\d.]+)/MpcVideoRenderer-(?<version>[\\d.]+)\\.zip"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/Aleksoid1978/VideoRenderer/releases/download/$matchTag/MpcVideoRenderer-$version.zip"
+            }
+        }
+    }
+}
