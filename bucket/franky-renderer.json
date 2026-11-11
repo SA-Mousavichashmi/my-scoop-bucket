@@ -1,0 +1,48 @@
+{
+    "version": "1.2",
+    "description": "FrankyRenderer is an open-source DirectShow video renderer based on MPC Video Renderer and libplacebo with HDR tone mapping, Dolby Vision Profile 7 auto-detection, and custom shaders.",
+    "homepage": "https://github.com/mryx007/FrankyRenderer",
+    "license": "GPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/mryx007/FrankyRenderer/releases/download/v1.2/FrankyRenderer-1.2-x64.zip",
+            "hash": "ea099469799152dc23e9c552ec0c463fa64283f081604bf970f06e10ec36b163",
+            "extract_dir": "FrankyRenderer-1.2-x64"
+        }
+    },
+    "post_install": [
+        "$isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)",
+        "if ($isAdmin) {",
+        "    Start-Process -FilePath \"regsvr32.exe\" -ArgumentList \"/s `\"$dir\\FrankyRenderer.ax`\"\" -WorkingDirectory \"$dir\" -Wait -NoNewWindow",
+        "} else {",
+        "    $c = 'using System; using System.Runtime.InteropServices; using Microsoft.Win32; public class FrankyReg { [DllImport(\"advapi32.dll\")] public static extern int RegOverridePredefKey(IntPtr h, IntPtr n); [DllImport(\"kernel32.dll\", CharSet=CharSet.Unicode)] public static extern bool SetDllDirectory(string p); [DllImport(\"kernel32.dll\", CharSet=CharSet.Unicode)] public static extern IntPtr LoadLibrary(string p); [DllImport(\"kernel32.dll\")] public static extern IntPtr GetProcAddress(IntPtr m, string n); [DllImport(\"kernel32.dll\")] public static extern bool FreeLibrary(IntPtr m); public delegate int F(); public static int Reg(string p, bool u) { RegistryKey k = Registry.CurrentUser.CreateSubKey(@\"Software\\Classes\"); IntPtr h = k.Handle.DangerousGetHandle(); RegOverridePredefKey(new IntPtr(unchecked((int)0x80000000)), h); RegOverridePredefKey(new IntPtr(unchecked((int)0x80000002)), h); SetDllDirectory(System.IO.Path.GetDirectoryName(p)); IntPtr m = LoadLibrary(p); if (m == IntPtr.Zero) { SetDllDirectory(null); RegOverridePredefKey(new IntPtr(unchecked((int)0x80000000)), IntPtr.Zero); RegOverridePredefKey(new IntPtr(unchecked((int)0x80000002)), IntPtr.Zero); k.Close(); return -1; } IntPtr f = GetProcAddress(m, u ? \"DllUnregisterServer\" : \"DllRegisterServer\"); int r = -2; if (f != IntPtr.Zero) { F d = (F)Marshal.GetDelegateForFunctionPointer(f, typeof(F)); r = d(); } FreeLibrary(m); SetDllDirectory(null); RegOverridePredefKey(new IntPtr(unchecked((int)0x80000000)), IntPtr.Zero); RegOverridePredefKey(new IntPtr(unchecked((int)0x80000002)), IntPtr.Zero); k.Close(); return r; } };';",
+        "    if (-not ([System.Management.Automation.PSTypeName]'FrankyReg').Type) { Add-Type -TypeDefinition $c }",
+        "    [FrankyReg]::Reg(\"$dir\\FrankyRenderer.ax\", $false) | Out-Null",
+        "}"
+    ],
+    "pre_uninstall": [
+        "$players = Get-Process -Name PotPlayerMini64,PotPlayer64,mpc-be64,mpc-hc64 -ErrorAction SilentlyContinue",
+        "if ($players) {",
+        "    Write-Warning 'Closing running media players to unregister FrankyRenderer...'",
+        "    $players | Stop-Process -Force -ErrorAction SilentlyContinue",
+        "    Start-Sleep -Seconds 1",
+        "}",
+        "$isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)",
+        "if ($isAdmin) {",
+        "    Start-Process -FilePath \"regsvr32.exe\" -ArgumentList \"/u /s `\"$dir\\FrankyRenderer.ax`\"\" -WorkingDirectory \"$dir\" -Wait -NoNewWindow",
+        "} else {",
+        "    $c = 'using System; using System.Runtime.InteropServices; using Microsoft.Win32; public class FrankyReg { [DllImport(\"advapi32.dll\")] public static extern int RegOverridePredefKey(IntPtr h, IntPtr n); [DllImport(\"kernel32.dll\", CharSet=CharSet.Unicode)] public static extern bool SetDllDirectory(string p); [DllImport(\"kernel32.dll\", CharSet=CharSet.Unicode)] public static extern IntPtr LoadLibrary(string p); [DllImport(\"kernel32.dll\")] public static extern IntPtr GetProcAddress(IntPtr m, string n); [DllImport(\"kernel32.dll\")] public static extern bool FreeLibrary(IntPtr m); public delegate int F(); public static int Reg(string p, bool u) { RegistryKey k = Registry.CurrentUser.CreateSubKey(@\"Software\\Classes\"); IntPtr h = k.Handle.DangerousGetHandle(); RegOverridePredefKey(new IntPtr(unchecked((int)0x80000000)), h); RegOverridePredefKey(new IntPtr(unchecked((int)0x80000002)), h); SetDllDirectory(System.IO.Path.GetDirectoryName(p)); IntPtr m = LoadLibrary(p); if (m == IntPtr.Zero) { SetDllDirectory(null); RegOverridePredefKey(new IntPtr(unchecked((int)0x80000000)), IntPtr.Zero); RegOverridePredefKey(new IntPtr(unchecked((int)0x80000002)), IntPtr.Zero); k.Close(); return -1; } IntPtr f = GetProcAddress(m, u ? \"DllUnregisterServer\" : \"DllRegisterServer\"); int r = -2; if (f != IntPtr.Zero) { F d = (F)Marshal.GetDelegateForFunctionPointer(f, typeof(F)); r = d(); } FreeLibrary(m); SetDllDirectory(null); RegOverridePredefKey(new IntPtr(unchecked((int)0x80000000)), IntPtr.Zero); RegOverridePredefKey(new IntPtr(unchecked((int)0x80000002)), IntPtr.Zero); k.Close(); return r; } };'",
+        "    if (-not ([System.Management.Automation.PSTypeName]'FrankyReg').Type) { Add-Type -TypeDefinition $c }",
+        "    [FrankyReg]::Reg(\"$dir\\FrankyRenderer.ax\", $true) | Out-Null",
+        "}"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/mryx007/FrankyRenderer/releases/download/v$version/FrankyRenderer-$version-x64.zip",
+                "extract_dir": "FrankyRenderer-$version-x64"
+            }
+        }
+    }
+}
