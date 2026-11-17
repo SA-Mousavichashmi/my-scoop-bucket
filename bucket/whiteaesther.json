@@ -1,12 +1,12 @@
 {
-    "version": "1.12.0",
+    "version": "1.13.0",
     "description": "WhiteAesther — Cross-platform desktop client for the Aether connection core",
     "homepage": "https://github.com/WhiteDNS/WhiteAesther",
     "license": "AGPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/WhiteDNS/WhiteAesther/releases/download/v1.12.0/WhiteAesther_1.12.0_windows_x86_64.exe",
-            "hash": "ffd8d8435c02df21d3627407f97508b4d64315f6c9393beaa76da9b260ea8c82"
+            "url": "https://github.com/WhiteDNS/WhiteAesther/releases/download/v1.13.0/WhiteAesther_1.13.0_windows_x86_64.exe",
+            "hash": "296085f1a10409ac7807f8ae3098c072c9463ac0436c578c4f4d5f77359a5c14"
         }
     },
     "pre_install": [
