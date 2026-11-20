@@ -1,13 +1,13 @@
 {
-    "version": "1.2.1",
+    "version": "1.2.2",
     "description": "FrankyRenderer is an open-source DirectShow video renderer based on MPC Video Renderer and libplacebo with HDR tone mapping, Dolby Vision Profile 7 auto-detection, and custom shaders.",
     "homepage": "https://github.com/mryx007/FrankyRenderer",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/mryx007/FrankyRenderer/releases/download/v1.2.1/FrankyRenderer-1.2.1-x64.zip",
-            "hash": "61861a2afdf28666ee245e7a647d00effbed40e77765010782e12de3ba50eaac",
-            "extract_dir": "FrankyRenderer-1.2.1-x64"
+            "url": "https://github.com/mryx007/FrankyRenderer/releases/download/v1.2.2/FrankyRenderer-1.2.2-x64.zip",
+            "hash": "4b525ea1e23b7b672dfe5942b9a74ad459c968594a89264a74c05deff58adaed",
+            "extract_dir": "FrankyRenderer-1.2.2-x64"
         }
     },
     "post_install": [
