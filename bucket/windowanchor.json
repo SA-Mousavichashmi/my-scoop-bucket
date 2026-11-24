@@ -1,12 +1,12 @@
 {
-    "version": "1.7.0.1",
+    "version": "1.7.0.2",
     "description": "Smart workspace management for Windows 10 and Windows 11. Save and restore window layouts, positions, and application states automatically based on monitor configurations.",
     "homepage": "https://github.com/marvintrvl/WindowAnchor",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/marvintrvl/WindowAnchor/releases/download/v1.7.0.1/WindowAnchor-v1.7.0.1.exe#/WindowAnchor.exe",
-            "hash": "b8ad66f0d2139aa66ad2a62d2aeac36bee333d981d74ec526b3c6434b442c182"
+            "url": "https://github.com/marvintrvl/WindowAnchor/releases/download/v1.7.0.2/WindowAnchor-v1.7.0.2.exe#/WindowAnchor.exe",
+            "hash": "739808b682a10c9d13d858acdc2f33136e3c480b2971fec30ff98a0a50508fd6"
         }
     },
     "bin": "WindowAnchor.exe",
