@@ -1,12 +1,12 @@
 {
-    "version": "1.5.0",
+    "version": "1.6.1",
     "description": "Adaptive DPI bypass client with Xray core, TUN mode, and DoH shield",
     "homepage": "https://github.com/DrAlanK/Alan-RIP-Dpi-Windows",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/DrAlanK/Alan-RIP-Dpi-Windows/releases/download/v1.5.0/Alan-RIP-Dpi-v1.5.0-Windows-Portable.zip",
-            "hash": "5476a48b8261e61c4a941aad1db37903a55cfd1cafd7ef485183c6ae7a6ff451"
+            "url": "https://github.com/DrAlanK/Alan-RIP-Dpi-Windows/releases/download/v1.6.1/Alan-RIP-Dpi-v1.6.1-Windows-Portable.zip",
+            "hash": "d8a3b74f42f48531d0b17f15d569fe4a5adfa29d63c0b69fc2bd7cecaab74973"
         }
     },
     "shortcuts": [
