@@ -1,16 +1,16 @@
 {
-    "version": "1.0.25",
+    "version": "1.0.26",
     "description": "WhiteVPN Desktop — Wails desktop client running the mihomo engine",
     "homepage": "https://github.com/WhiteDNS/WhiteVPN-Desktop",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/WhiteDNS/WhiteVPN-Desktop/releases/download/v1.0.25/WhiteVPN-Desktop-1.0.25-windows-x64.zip",
-            "hash": "df03754ab64b87149fe03ffa396962e50b1e595fddd91c6c4dfef44504c349cb"
+            "url": "https://github.com/WhiteDNS/WhiteVPN-Desktop/releases/download/v1.0.26/WhiteVPN-Desktop-1.0.26-windows-x64.zip",
+            "hash": "79af10be5c29488cc85f28c5c03cc692212d424ba9617d3e5c852f3c05d0eec9"
         },
         "arm64": {
-            "url": "https://github.com/WhiteDNS/WhiteVPN-Desktop/releases/download/v1.0.25/WhiteVPN-Desktop-1.0.25-windows-arm64-windows-on-arm.zip",
-            "hash": "d766680f8fcd38971ca3327f016b0522282943758ba80e8f0900c41e89d424b0"
+            "url": "https://github.com/WhiteDNS/WhiteVPN-Desktop/releases/download/v1.0.26/WhiteVPN-Desktop-1.0.26-windows-arm64-windows-on-arm.zip",
+            "hash": "8e2a8a1323eec2ce36af6c1f64d9f6b5af432b550e594e1d17a7cc12fab56873"
         }
     },
     "shortcuts": [
